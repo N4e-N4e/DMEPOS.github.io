@@ -391,7 +391,7 @@ fig.show()
 
 # AI Assistant
 
-## Row {height="100%"}
+
 
 ```{=html}
 
