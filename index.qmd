@@ -393,27 +393,26 @@ fig.show()
 
 ## Row {height="100%"}
 
-::: {.card title="AI Fraud Assistant"}
-<div class="assistant-shell">
-  <div class="assistant-intro">
-    <div class="assistant-title">Ask about payment trends, supplier anomalies, provider patterns, or risk signals</div>
-    <div class="assistant-subtitle">This page reuses the chat experience from the original static HTML and can point to the existing backend endpoint.</div>
-  </div>
-  <div class="assistant-suggestions">
-    <div class="suggestion-chip">Summarize the highest-risk supplier patterns</div>
-    <div class="suggestion-chip">Compare referral spikes by state</div>
-    <div class="suggestion-chip">Explain the main open payment outliers</div>
-  </div>
-  <div class="chat-window" id="chat-window">
-    <div class="message assistant-message">
-      <strong>Assistant:</strong> Hello; ask about the sample dashboard trends or wire this pane to the existing Gemini backend.
-    </div>
-  </div>
-  <div class="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Ask about fraud risk patterns..." />
-    <button id="chat-send" type="button">Send</button>
-  </div>
-  <div class="assistant-note">CUSTOMIZE: update the chat endpoint in <code>scripts/chat.js</code> if the backend URL changes.</div>
-</div>
-<script src="scripts/chat.js"></script>
-:::
+```{=html}
+
+  
+    Ask about payment trends, supplier anomalies, provider patterns, or risk signals
+    This page reuses the chat experience from the original static HTML and can point to the existing backend endpoint.
+  
+  
+    Summarize the highest-risk supplier patterns
+    Compare referral spikes by state
+    Explain the main open payment outliers
+  
+  
+    
+      Assistant: Hello! Ask about the sample dashboard trends or wire this pane to the existing Gemini backend.
+    
+  
+  
+    
+    Send
+  
+
+
+```
