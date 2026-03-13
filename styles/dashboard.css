@@ -1,4 +1,4 @@
-/* Apply a darker dashboard surface inspired by the original static page */
+/*Cosmetics for the page*/
 body {
   background: #f1f5f9;
   color: #1e293b;
@@ -26,7 +26,7 @@ body {
 /* Style dashboard cards so the layout resembles the original HTML shell */
 .card,
 .quarto-dashboard .card {
-  background: #1e293b;
+  background: #ffffff;
   border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
@@ -35,7 +35,7 @@ body {
 /* Highlight card titles with the same bright accent used in the original page */
 .card-title,
 .quarto-dashboard .card-title {
-  color: #38bdf8;
+  color: #0ea5e9;
   font-weight: 700;
 }
 
@@ -48,7 +48,7 @@ body {
 
 /* Style each metric tile as a compact inner card */
 .metric-tile {
-  background: #111827;
+  background: #f8fafc;
   border: 1px solid rgba(56, 189, 248, 0.18);
   border-radius: 12px;
   padding: 1rem 1.1rem;
@@ -56,7 +56,7 @@ body {
 
 /* Style the metric label text */
 .metric-label {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.85rem;
   margin-bottom: 0.35rem;
   text-transform: uppercase;
@@ -65,7 +65,7 @@ body {
 
 /* Style the primary metric number */
 .metric-value {
-  color: #f8fafc;
+  color: #1e293b;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.1;
@@ -73,7 +73,7 @@ body {
 
 /* Style the secondary metric descriptor */
 .metric-sub {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.85rem;
   margin-top: 0.35rem;
 }
