@@ -337,15 +337,15 @@ HTML("""
   background: #1f2937;
   border-radius: 10px;
   padding: clamp(8px, 1.5vw, 20px);
-  font-size: clamp(11px, 1.3vw, 17px);
+  font-size: clamp(12px, 1.2vw, 16px);
   color: #e2e8f0;
   border-left: 3px solid;
 }
 .info-box.instructions { border-color: #38bdf8; }
 .info-box.limitations  { border-color: #f87171; }
 .info-box h4 {
-  margin: 0 0 clamp(4px, 0.8vw, 12px) 0;
-  font-size: clamp(11px, 1.3vw, 17px);
+  margin: 0 0 clamp(4px, 0.8vw, 10px) 0;
+  font-size: clamp(12px, 1.2vw, 16px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -355,8 +355,13 @@ HTML("""
 .info-box ol {
   margin: 0;
   padding-left: clamp(12px, 1.5vw, 20px);
-  line-height: clamp(1.4, 2.2vw, 2.2);
+  line-height: clamp(1.6, 1.8vw, 1.8);
   color: #94a3b8;
+}
+@media (max-width: 768px) {
+  .info-panel {
+    flex-direction: column;
+  }
 }
 </style>
 
