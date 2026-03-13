@@ -330,7 +330,7 @@ HTML("""
 .chat-shell {
   display: flex;
   flex-direction: column;
-  height: 72vh;
+  height: 45vh;
   gap: 12px;
   padding: 8px;
 }
@@ -375,6 +375,7 @@ HTML("""
   display: flex;
   gap: 12px;
   margin-bottom: 4px;
+  flex-shrink: 0;
 }
 .info-box {
   flex: 1;
