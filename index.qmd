@@ -326,11 +326,16 @@ fig.show()
 
 HTML("""
 <style>
+.card-body {
+  height: fit-content !important;
+  padding-bottom: 8px !important;
+}
 .info-panel {
   display: flex;
   flex-direction: row;
   gap: 12px;
   padding: 8px;
+  height: fit-content;
 }
 .info-box {
   flex: 1;
@@ -452,3 +457,4 @@ HTML("""
 <script src="scripts/chat.js"></script>
 """)
 ```
+
