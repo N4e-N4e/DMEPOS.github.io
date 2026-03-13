@@ -341,7 +341,7 @@ HTML("""
   padding: 15px;
   overflow-y: auto;
   color: #e2e8f0;
-  font-size: 14px;
+  font-size: 18px;
 }
 .message { margin-bottom: 10px; line-height: 1.5; }
 .user-message strong { color: #38bdf8; }
@@ -371,7 +371,59 @@ HTML("""
   font-size: 14px;
 }
 .chat-input-row button:hover { background: #7dd3fc; }
+.info-panel {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.info-box {
+  flex: 1;
+  background: #1f2937;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #e2e8f0;
+  border-left: 3px solid;
+}
+.info-box.instructions { border-color: #38bdf8; }
+.info-box.limitations  { border-color: #f87171; }
+.info-box h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.info-box.instructions h4 { color: #38bdf8; }
+.info-box.limitations  h4 { color: #f87171; }
+.info-box ol {
+  margin: 0;
+  padding-left: 16px;
+  line-height: 1.8;
+  color: #94a3b8;
+}
 </style>
+
+<div class="info-panel">
+  <div class="info-box instructions">
+    <h4>How to Use</h4>
+    <ol>
+      <li>Type a person's name, business name, or topic into the chat box and press <strong>Send</strong> or hit <strong>Enter</strong>.</li>
+      <li>The AI will search the relevant database and return a <strong>Summary</strong> and <strong>Fraud Analysis</strong>.</li>
+      <li>For best results, be specific — use a full name, business name, or NPI number where available.</li>
+      <li>To target a specific database, mention <strong>OIG</strong> or <strong>SOS</strong> in your question.</li>
+    </ol>
+  </div>
+  <div class="info-box limitations">
+    <h4>Limitations</h4>
+    <ol>
+      <li>Information is sourced from two databases only — <strong>HHS OIG</strong> and <strong>Missouri Secretary of State (SOS)</strong>.</li>
+      <li>The AI searches <strong>one database per question</strong>. If none is specified, it will decide based on your question.</li>
+      <li>Responses are based on the <strong>first result returned</strong>. Including more results is possible but will increase response time.</li>
+      <li>The AI is limited to <strong>2 questions per minute</strong>. If you receive an error, wait a moment and try again.</li>
+    </ol>
+  </div>
+</div>
 
 <div class="chat-shell">
   <div class="chat-window" id="chat-window">
