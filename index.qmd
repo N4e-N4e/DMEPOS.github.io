@@ -142,24 +142,6 @@ HTML(f"""
 ```
 
 ## Row {height="66%"}
-
-```{python}
-#| title: "Top Supplier Spend"
-
-supplier_spend = suppliers.sort_values("total_spend_m", ascending=False)
-fig = px.bar(
-    supplier_spend,
-    x="supplier_name",
-    y="total_spend_m",
-    color="supplier_tier",
-    text_auto=".1f",
-    labels={"supplier_name": "Supplier", "total_spend_m": "Spend (Millions)"},
-)
-fig = style_plot(fig)
-fig.show()
-```
-## Row {height="66%"}
-
 ```{python}
 #| title: "Supplier Billing Trends: Spike & Disappearance"
 
@@ -176,18 +158,11 @@ fig = px.line(
     }
 )
 
-fig = style_plot(fig)
-fig.update_layout(
-    height=420,   # controls vertical size
-    margin=dict(l=20, r=20, t=40, b=20)
-)
-
 fig.show()
 ```
 ## Row {height="40%"}
+```{python}
 #| title: "Supplier HCPCS Billing Breakdown"
-
-
 hcpcs_heatmap = supplier_hcpcs_table.set_index("suplr_npi")
 #| title: "Supplier HCPCS Billing Heatmap"
 
