@@ -1,7 +1,7 @@
 /* Apply a darker dashboard surface inspired by the original static page */
 body {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
 /* Tune the dashboard body spacing for a roomier layout */
