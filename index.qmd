@@ -320,7 +320,7 @@ fig.show()
 
 # AI Assistant
 
-## Row {height="265px"}
+## Row {height="270px"}
 ```{python}
 #| title: "How to Use & Limitations"
 
