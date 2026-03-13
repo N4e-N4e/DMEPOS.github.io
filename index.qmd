@@ -320,7 +320,7 @@ fig.show()
 
 # AI Assistant
 
-## Row {height="35%"}
+## Row {height="40%"}
 ```{python}
 #| title: "How to Use & Limitations"
 
@@ -328,9 +328,11 @@ HTML("""
 <style>
 .info-panel {
   display: flex;
+  flex-direction: row;
   gap: 12px;
   padding: 8px;
   height: 100%;
+  overflow: hidden;
 }
 .info-box {
   flex: 1;
@@ -340,6 +342,7 @@ HTML("""
   font-size: 13px;
   color: #e2e8f0;
   border-left: 3px solid;
+  overflow: hidden;
 }
 .info-box.instructions { border-color: #38bdf8; }
 .info-box.limitations  { border-color: #f87171; }
@@ -355,7 +358,7 @@ HTML("""
 .info-box ol {
   margin: 0;
   padding-left: 16px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #94a3b8;
 }
 </style>
@@ -383,7 +386,7 @@ HTML("""
 """)
 ```
 
-## Row {height="65%"}
+## Row {height="60%"}
 ```{python}
 #| title: "AI Fraud Assistant"
 
