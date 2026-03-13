@@ -157,25 +157,6 @@ fig = px.bar(
 fig = style_plot(fig)
 fig.show()
 ```
-
-```{python}
-#| title: "Spend Mix by Product Family"
-
-spend_by_family = (
-    suppliers
-    .groupby("product_family", as_index=False)["total_spend_m"]
-    .sum()
-    .sort_values("total_spend_m", ascending=False)
-)
-fig = px.pie(
-    spend_by_family,
-    names="product_family",
-    values="total_spend_m",
-    hole=0.45,
-)
-fig = style_plot(fig)
-fig.show()
-```
 ## Row {height="66%"}
 
 ```{python}
