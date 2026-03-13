@@ -341,7 +341,7 @@ HTML("""
   padding: 15px;
   overflow-y: auto;
   color: #e2e8f0;
-  font-size: 18px;
+  font-size: 14px;
 }
 .message { margin-bottom: 10px; line-height: 1.5; }
 .user-message strong { color: #38bdf8; }
