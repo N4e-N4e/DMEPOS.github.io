@@ -160,7 +160,7 @@ fig = px.line(
 
 fig.show()
 ```
-## Row {height="40%"}
+
 ```{python}
 #| title: "Supplier HCPCS Billing Breakdown"
 hcpcs_heatmap = supplier_hcpcs_table.set_index("suplr_npi")
