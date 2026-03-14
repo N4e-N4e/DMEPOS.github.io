@@ -430,9 +430,9 @@ HTML("""
   flex: 1;
   padding: 10px 14px;
   border-radius: 8px;
-  border: 1px solid #334155;
-  background: #1f2937;
-  color: #e2e8f0;
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #14532d;
   font-size: clamp(13px, 1.1vw, 17px);
   outline: none;
 }
@@ -440,8 +440,8 @@ HTML("""
   padding: 10px 22px;
   border-radius: 8px;
   border: none;
-  background: #38bdf8;
-  color: #0f172a;
+  background: #16a34a;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
   font-size: clamp(13px, 1.1vw, 17px);
