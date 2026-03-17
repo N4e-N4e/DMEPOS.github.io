@@ -118,9 +118,9 @@ fig.show()
 ```{python}
 #| title: "Supplier Snapshot"
 
-supplier_avg_risk = suppliers["supplier_risk_score"].mean()
 supplier_spend_total = surges_count["Total_Spend"]
 supplier_risk_orders = surges_count["Surge_Supplier_Count"]
+supplier_avg_risk = suppliers["supplier_risk_score"].mean()
 
 HTML(f"""
 <div class='metric-grid'>
