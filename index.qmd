@@ -331,7 +331,7 @@ fig.show()
 
 # AI Assistant
 
-## Row {height="270px"}
+## Row {height="300px"}
 ```{python}
 #| title: "How to Use & Limitations"
 
@@ -354,7 +354,7 @@ HTML("""
   background: #f0fdf4;
   border-radius: 10px;
   padding: clamp(8px, 1.5vw, 20px);
-  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.6vw, 20px);
   color: #14532d;
   border-left: 3px solid;
 }
@@ -362,7 +362,7 @@ HTML("""
 .info-box.limitations  { border-color: #f87171; }
 .info-box h4 {
   margin: 0 0 clamp(4px, 0.8vw, 10px) 0;
-  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.6vw, 20px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -425,7 +425,7 @@ HTML("""
   padding: 15px;
   overflow-y: auto;
   color: #14532d;
-  font-size: clamp(13px, 1.1vw, 17px);
+  font-size: clamp(15px, 1.4vw, 20px);
 }
 .message { margin-bottom: 10px; line-height: 1.5; }
 .user-message strong { color: #38bdf8; }
@@ -441,7 +441,7 @@ HTML("""
   border: 1px solid #bbf7d0;
   background: #f0fdf4;
   color: #14532d;
-  font-size: clamp(13px, 1.1vw, 17px);
+  font-size: clamp(15px, 1.4vw, 20px);
   outline: none;
 }
 .chat-input-row button {
@@ -452,7 +452,7 @@ HTML("""
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  font-size: clamp(13px, 1.1vw, 17px);
+  font-size: clamp(15px, 1.4vw, 20px);
 }
 .chat-input-row button:hover { background: #7dd3fc; }
 </style>
