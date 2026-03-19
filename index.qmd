@@ -331,7 +331,7 @@ fig.show()
 
 # AI Assistant
 
-## Row {height="345px"}
+## Row {height="270px"}
 ```{python}
 #| title: "How to Use & Limitations"
 
@@ -354,18 +354,18 @@ HTML("""
   background: #f0fdf4;
   border-radius: 10px;
   padding: clamp(8px, 1.5vw, 20px);
-  font-size: clamp(15px, 1.8vw, 22px);
+  font-size: clamp(12px, 1.2vw, 16px);
   color: #14532d;
   border-left: 3px solid;
 }
 .info-box.instructions { border-color: #38bdf8; }
 .info-box.limitations  { border-color: #f87171; }
 .info-box h4 {
-  margin: 0 0 clamp(6px, 1vw, 14px) 0;
-  font-size: clamp(16px, 2vw, 24px);
+  margin: 0 0 clamp(4px, 0.8vw, 10px) 0;
+  font-size: clamp(12px, 1.2vw, 16px);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 .info-box.instructions h4 { color: #38bdf8; }
 .info-box.limitations  h4 { color: #f87171; }
@@ -386,7 +386,7 @@ HTML("""
   <div class="info-box instructions">
     <h4>How to Use</h4>
     <ol>
-      <li>Type a name, business, or topic into the chat box and press <strong>Send</strong> or hit <strong>Enter</strong>.</li>
+      <li>Type a person's name, business name, or topic into the chat box and press <strong>Send</strong> or hit <strong>Enter</strong>.</li>
       <li>The AI will search the relevant database and return a <strong>Summary</strong> and <strong>Fraud Analysis</strong>.</li>
       <li>For best results, use a full name, business name, or NPI number.</li>
       <li>To target a specific database, mention <strong>OIG</strong> or <strong>SOS</strong> in your question.</li>
@@ -395,9 +395,9 @@ HTML("""
   <div class="info-box limitations">
     <h4>Limitations</h4>
     <ol>
-      <li>Information is sourced from two databases only — <strong>HHS OIG</strong> and <strong>Missouri SOS</strong>.</li>
-      <li>The AI searches <strong>one database per question</strong>. It will decide which one if not specified.</li>
-      <li>Responses use the <strong>first result returned</strong>. More results can be included but will slow response time.</li>
+      <li>Information is sourced from two databases only — <strong>HHS OIG</strong> and <strong>Missouri Secretary of State (SOS)</strong>.</li>
+      <li>The AI searches <strong>one database per question</strong>. If none is specified, it will decide based on your question.</li>
+      <li>Responses are based on the <strong>first result returned</strong>. More results can be included but will increase response time.</li>
       <li>The AI is limited to <strong>2 questions per minute</strong>. If you receive an error, wait a moment and try again.</li>
     </ol>
   </div>
@@ -425,7 +425,7 @@ HTML("""
   padding: 15px;
   overflow-y: auto;
   color: #14532d;
-  font-size: clamp(15px, 1.6vw, 22px);
+  font-size: clamp(13px, 1.1vw, 17px);
 }
 .message { margin-bottom: 10px; line-height: 1.5; }
 .user-message strong { color: #38bdf8; }
@@ -441,7 +441,7 @@ HTML("""
   border: 1px solid #bbf7d0;
   background: #f0fdf4;
   color: #14532d;
-  font-size: clamp(15px, 1.6vw, 22px);
+  font-size: clamp(13px, 1.1vw, 17px);
   outline: none;
 }
 .chat-input-row button {
@@ -452,7 +452,7 @@ HTML("""
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  font-size: clamp(15px, 1.6vw, 22px);
+  font-size: clamp(13px, 1.1vw, 17px);
 }
 .chat-input-row button:hover { background: #7dd3fc; }
 </style>
