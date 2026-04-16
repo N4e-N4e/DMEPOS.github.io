@@ -128,6 +128,7 @@ mini_fig = px.line(
     markers=True
 )
 
+mini_fig.update_xaxes(type='category')
 mini_fig.update_layout(
     height=180,
     margin=dict(l=10, r=10, t=10, b=10),
