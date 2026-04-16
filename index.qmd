@@ -246,6 +246,42 @@ fig = px.pie(
 fig = style_plot(fig)
 fig.show()
 ```
+#CHECKING SEMATICS
+
+## Row {height = 100%}
+```{python}
+# Semantic Mapping Config
+TABLE_SEMANTICS = {
+    "suplr_npi": "Supplier NPI",
+    "hcpcs_code": "HCPCS Code",
+    "hcpcs_desc": "Service Description",
+    "avg_billed_amt": "Avg. Billed Amount",
+    "surge_flag": "Risk Status"
+}
+
+def apply_table_semantics(df):
+    # 1. Logic Layer: Transform raw values to business terms
+    df['surge_flag'] = df['surge_flag'].map({1: "High Risk", 0: "Normal"})
+    
+    # 2. Formatting Layer: Currency and Precision
+    df['avg_billed_amt'] = df['avg_billed_amt'].apply(lambda x: f"${x:,.2f}")
+    
+    # 3. Naming Layer: Rename to user-friendly titles
+    return df.rename(columns=TABLE_SEMANTICS)[list(TABLE_SEMANTICS.values())]
+#| title: "Supplier HCPCS Billing"
+
+# Apply the semantic layer logic
+semantic_table = apply_table_semantics(supplier_hcpcs_table)
+
+# Display the table (using itables for a clean dashboard look)
+from itables import show
+show(semantic_table, 
+     classes="display nowrap compact", 
+     scrollY="300px", 
+     scrollCollapse=True, 
+     paging=False)
+
+```
 
 # Risk Signals
 
