@@ -112,7 +112,6 @@ fig.show()
 ```
 
 # Suppliers
-
 ## Row {height="34%"}
 
 ```{python}
@@ -165,15 +164,6 @@ HTML(f"""
 
 </div>
 """)
-
-```
-
-
-```{python}
-## Row {height="66%"}
-#| title: "Supplier HCPCS Billing"
-
-supplier_hcpcs_table
 
 ```
 
