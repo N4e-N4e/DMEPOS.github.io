@@ -168,11 +168,7 @@ HTML(f"""
 """)
 ```
 
-
-```{python}
-
 # Referring Providers
-
 ## Row {height="34%"}
 
 ```{python}
