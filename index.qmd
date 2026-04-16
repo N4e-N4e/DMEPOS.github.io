@@ -178,12 +178,6 @@ supplier_hcpcs_table
 ```
 ## Row {height="66%"}
 ```{python}
-#| title: "Surges suppliers and sold products"
-
-surges_products = surges_products.drop(surges_products.columns[0], axis=1)
-surges_products
-
-```
 
 # Referring Providers
 
