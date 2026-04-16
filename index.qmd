@@ -246,60 +246,12 @@ fig = px.pie(
 fig = style_plot(fig)
 fig.show()
 ```
-#CHECKING SEMATICS
+# CHECKING SEMATICS
 
 ## Row {height = 100%}
 ```{python}
 #| title: "Supplier HCPCS Billing"
-
-# Define your semantic layer mapping
-# Adjust these keys (left side) to match your CSV exactly
-TABLE_SEMANTICS = {
-    "suplr_npi": "Supplier NPI",
-    "hcpcs_code": "HCPCS Code",
-    "hcpcs_description": "Service Description",
-    "avg_billed_amt": "Avg. Billed Amount",
-    "surge_flag": "Risk Status"
-}
-
-def apply_table_semantics(df):
-    working_df = df.copy()
-    
-    # 1. Logic Layer: Format the Risk Status
-    if 'surge_flag' in working_df.columns:
-        working_df['surge_flag'] = working_df['surge_flag'].map({1: "⚠️ High Risk", 0: "✅ Normal"})
-    
-    # 2. Renaming Layer: Only keep and rename columns we want to show
-    existing_cols = [c for c in TABLE_SEMANTICS.keys() if c in working_df.columns]
-    working_df = working_df[existing_cols].rename(columns=TABLE_SEMANTICS)
-    
-    return working_df
-
-# Process the data
-semantic_table = apply_table_semantics(supplier_hcpcs_table)
-
-# Render using Pandas Styler (No extra libraries needed)
-semantic_table.style.set_properties(**{
-    'background-color': 'white',
-    'color': '#14532d',
-    'border-color': '#e2e8f0'
-}).format({
-    "Avg. Billed Amount": "${:,.2f}"
-}).hide(axis="index")
-
-#| title: "Supplier HCPCS Billing"
-
-# Apply the semantic layer logic
-semantic_table = apply_table_semantics(supplier_hcpcs_table)
-
-# Display the table (using itables for a clean dashboard look)
-from itables import show
-show(semantic_table, 
-     classes="display nowrap compact", 
-     scrollY="300px", 
-     scrollCollapse=True, 
-     paging=False)
-
+supplier_hcpcs_table
 ```
 
 # Risk Signals
