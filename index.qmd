@@ -164,6 +164,14 @@ HTML(f"""
 
 </div>
 """)
+```
+
+```
+{python}
+#| title: "Supplier HCPCS Billing"
+
+supplier_hcpcs_table
+## Row {height="66%"}
 
 ```
 
