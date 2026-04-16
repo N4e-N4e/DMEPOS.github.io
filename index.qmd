@@ -169,13 +169,14 @@ HTML(f"""
 ```
 
 
-
 ```{python}
+## Row {height="66%"}
 #| title: "Supplier HCPCS Billing"
 
 supplier_hcpcs_table
 
 ```
+
 ## Row {height="66%"}
 ```{python}
 
