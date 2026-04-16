@@ -252,6 +252,7 @@ fig.show()
 ```{python}
 #| title: "Supplier HCPCS Billing"
 
+print(supplier_hcpcs_table.columns.tolist())
 # 1. Rename columns to human-readable terms
 supplier_display = supplier_hcpcs_table.rename(columns={
     "suplr_npi": "Supplier NPI",
