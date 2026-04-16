@@ -252,24 +252,18 @@ fig.show()
 ```{python}
 #| title: "Supplier HCPCS Billing"
 
-print(supplier_hcpcs_table.columns.tolist())
-# 1. Rename columns to human-readable terms
-supplier_display = supplier_hcpcs_table.rename(columns={
-    "suplr_npi": "Supplier NPI",
-    "hcpcs": "HCPCS Code",
-    "hcpcs_description": "Service Description",
-    "avg_billed_amount": "Avg. Billed Amount",
-    "surge_flag": "Risk Status"
-})
+# 1. Clean the NPI header
+df_display = supplier_hcpcs_table.rename(columns={"suplr_npi": "Supplier NPI"})
 
-# 2. Convert 1/0 to meaningful status
-if "Risk Status" in supplier_display.columns:
-    supplier_display["Risk Status"] = supplier_display["Risk Status"].replace({1: "⚠️ High Risk", 0: "✅ Normal"})
+# 2. Semantic Layer: Format all HCPCS columns as currency
+# We find every column that isn't the 'Supplier NPI'
+hcpcs_cols = [c for c in df_display.columns if c != "Supplier NPI"]
 
-# 3. Final display with currency formatting
-supplier_display.style.format({
-    "Avg. Billed Amount": "${:,.2f}"
-}, na_rep="-").hide(axis="index")
+# 3. Apply formatting
+df_display.style.format({
+    col: "${:,.2f}" for col in hcpcs_cols
+}).hide(axis="index")
+
 
 ```
 
