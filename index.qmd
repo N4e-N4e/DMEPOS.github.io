@@ -111,7 +111,6 @@ fig = style_plot(fig)
 fig.show()
 ```
 # Suppliers
-
 ## Row {height="34%"}
 
 ```{python}
@@ -128,18 +127,14 @@ mini_fig = px.line(
     markers=True
 )
 
-# ✅ FIX: do NOT reassign
-mini_fig.update_xaxes(type='category')
-
-mini_fig.update_layout(
-    height=180,
+mini_fig = mini_fig.update_xaxes(type='category')
+mini_fig = mini_fig.update_layout(height=180,
     margin=dict(l=10, r=10, t=10, b=10),
     xaxis_title=None,
     yaxis_title=None,
-    showlegend=False
-)
+    showlegend=False)
 
-mini_fig.update_traces(line=dict(width=3))
+mini_fig = mini_fig.update_traces(line=dict(width=3))
 
 mini_chart_html = mini_fig.to_html(full_html=False, include_plotlyjs=False)
 
@@ -155,17 +150,28 @@ HTML(f"""
   <div class='metric-tile'>
     <div class='metric-label'>High-Risk Orders</div>
     <div class='metric-value'>{supplier_risk_orders:,.0f}</div>
-    <div class='metric-sub'>Detected through anomaly signals</div>
+    <div class='metric-sub'>Flagged in sample history</div>
   </div>
 
   <div class='metric-tile'>
     <div class='metric-label'>Supplier Activity Trend</div>
+    
     <div>{mini_chart_html}</div>
-    <div class='metric-sub'>Irregular activity pattern</div>
+    
+    <div class='metric-sub'>Spike & disappearance pattern</div>
   </div>
 
 </div>
 """)
+```
+
+## Row {height="66%"}
+
+```{python}
+#| title: "Supplier HCPCS Billing"
+
+supplier_hcpcs_table
+
 ```
 
 # Referring Providers
