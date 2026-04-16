@@ -250,24 +250,36 @@ fig.show()
 
 ## Row {height = 100%}
 ```{python}
-# Semantic Mapping Config
+# Updated Mapping (Check your CSV headers and match exactly here)
 TABLE_SEMANTICS = {
     "suplr_npi": "Supplier NPI",
-    "hcpcs_code": "HCPCS Code",
-    "hcpcs_desc": "Service Description",
-    "avg_billed_amt": "Avg. Billed Amount",
-    "surge_flag": "Risk Status"
+    "hcpcs": "HCPCS Code",
+    "hcpcs_description": "Service Description",
+    "avg_billed_amount": "Avg. Billed Amount",
+    "is_surge": "Risk Status" # Changed to common alternates
 }
 
 def apply_table_semantics(df):
-    # 1. Logic Layer: Transform raw values to business terms
-    df['surge_flag'] = df['surge_flag'].map({1: "High Risk", 0: "Normal"})
+    # Create a copy so we don't modify the original data
+    working_df = df.copy()
     
-    # 2. Formatting Layer: Currency and Precision
-    df['avg_billed_amt'] = df['avg_billed_amt'].apply(lambda x: f"${x:,.2f}")
+    # 1. Logic Layer: Try to map the risk column (handle potential missing column)
+    # Check your CSV: is it 'surge_flag', 'is_surge', or 'risk_indicator'?
+    risk_col = next((c for c in ['surge_flag', 'is_surge', 'risk_indicator'] if c in working_df.columns), None)
     
-    # 3. Naming Layer: Rename to user-friendly titles
-    return df.rename(columns=TABLE_SEMANTICS)[list(TABLE_SEMANTICS.values())]
+    if risk_col:
+        working_df[risk_col] = working_df[risk_col].map({1: "⚠️ High Risk", 0: "✅ Normal"})
+    
+    # 2. Formatting Layer: Try to format currency
+    amt_col = next((c for c in ['avg_billed_amt', 'avg_billed_amount'] if c in working_df.columns), None)
+    if amt_col:
+        working_df[amt_col] = working_df[amt_col].apply(lambda x: f"${x:,.2f}" if pd.notnull(x) else "$0.00")
+
+    # 3. Naming Layer: Only rename columns that actually exist
+    existing_map = {k: v for k, v in TABLE_SEMANTICS.items() if k in working_df.columns}
+    
+    return working_df.rename(columns=existing_map)[list(existing_map.values())]
+
 #| title: "Supplier HCPCS Billing"
 
 # Apply the semantic layer logic
