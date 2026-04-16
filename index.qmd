@@ -251,7 +251,25 @@ fig.show()
 ## Row {height = 100%}
 ```{python}
 #| title: "Supplier HCPCS Billing"
-supplier_hcpcs_table
+
+# 1. Rename columns to human-readable terms
+supplier_display = supplier_hcpcs_table.rename(columns={
+    "suplr_npi": "Supplier NPI",
+    "hcpcs": "HCPCS Code",
+    "hcpcs_description": "Service Description",
+    "avg_billed_amount": "Avg. Billed Amount",
+    "surge_flag": "Risk Status"
+})
+
+# 2. Convert 1/0 to meaningful status
+if "Risk Status" in supplier_display.columns:
+    supplier_display["Risk Status"] = supplier_display["Risk Status"].replace({1: "⚠️ High Risk", 0: "✅ Normal"})
+
+# 3. Final display with currency formatting
+supplier_display.style.format({
+    "Avg. Billed Amount": "${:,.2f}"
+}, na_rep="-").hide(axis="index")
+
 ```
 
 # Risk Signals
