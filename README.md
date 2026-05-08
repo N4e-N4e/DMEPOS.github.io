@@ -9,8 +9,8 @@ An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthe
 ## What's in this repo
 
 ```
-index.html        → The full-page dark-themed chatbot UI
-chat.js           → Assistant logic — calls the Render backend, renders responses
+index.html → The full-page dark-themed chatbot UI
+chat.js → Assistant logic - calls the Render backend, renders responses
 ```
 
 That's it. No build step, no frameworks, no dependencies.
