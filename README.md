@@ -1,0 +1,103 @@
+# DMEPOS Fraud Analysis — AI Assistant
+
+An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthetics, Orthotics, and Supplies) investigations. The assistant searches two official databases — **HHS OIG** and the **Missouri Secretary of State (SOS)** — and returns a plain-language summary and fraud risk analysis for any person, business, or NPI number you query.
+
+> The rest of the project's dashboards (Open Payments, Suppliers, Referring Providers, Risk Signals) live in Tableau. This repo is the standalone AI Assistant web app only.
+
+---
+
+## What's in this repo
+
+```
+index.html        → The full-page dark-themed chatbot UI
+chat.js           → Assistant logic — calls the Render backend, renders responses
+```
+
+That's it. No build step, no frameworks, no dependencies.
+
+---
+
+## How it works
+
+The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user types a query, `chat.js` sends a `POST` request to the **Render backend**, which searches HHS OIG or Missouri SOS and returns an AI-generated summary and fraud analysis. The response is rendered back into the chat window.
+
+```
+User types query
+      ↓
+chat.js  →  POST { message: "..." }  →  Render backend
+                                              ↓
+                                    Searches HHS OIG / MO SOS
+                                              ↓
+chat.js  ←  { reply: "..." }  ←  AI-generated response
+      ↓
+Rendered in chat window
+```
+
+### Backend endpoint
+
+```
+POST https://backend-site-lifv.onrender.com/chat
+Content-Type: application/json
+
+{ "message": "your query here" }
+```
+
+Returns:
+```json
+{ "reply": "AI-generated summary and fraud analysis..." }
+```
+
+Update the `CHAT_ENDPOINT` constant at the top of `chat.js` if the Render URL ever changes.
+
+---
+
+## Local development
+
+No build step required. Just open `index.html` in a browser — or serve it locally to avoid any CORS issues:
+
+```bash
+# Python
+python -m http.server 8000
+
+# Node
+npx serve .
+```
+
+Then visit `http://localhost:8000`.
+
+---
+
+## Deploying to GitHub Pages
+
+Push `index.html` and `chat.js` to your repo. In your GitHub repo settings, go to **Pages** and set the source to the branch and folder containing these files. GitHub Pages will serve `index.html` automatically.
+
+No GitHub Actions workflow or build process is needed — the site is purely static.
+
+---
+
+## Using the assistant
+
+| Goal | What to type |
+|------|-------------|
+| Look up a person | Full name — e.g. `John Smith` |
+| Look up a business | Business name — e.g. `Acme Medical Supply` |
+| Search by identifier | NPI number — e.g. `1234567890` |
+| Target a specific database | Include `OIG` or `SOS` in your query |
+
+**Limitations to be aware of:**
+- Searches one database per question (OIG or SOS). If you don't specify, the AI decides.
+- Results are based on the first match returned — not a full list.
+- Rate limited to **2 questions per minute**. If you hit an error, wait a moment and try again.
+- Data sources: HHS OIG exclusions database and Missouri Secretary of State business registry only.
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Plain HTML, CSS, JavaScript |
+| Hosting | GitHub Pages |
+| Backend / AI | Python on Render |
+| Data sources | HHS OIG, Missouri Secretary of State |
+| Dashboards | Tableau (separate — not in this repo) |
