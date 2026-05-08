@@ -1,4 +1,4 @@
-# DMEPOS Fraud Analysis — AI Assistant
+# DMEPOS Fraud Analysis: AI Assistant
 
 An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthetics, Orthotics, and Supplies) investigations. The assistant searches two official databases — **HHS OIG** and the **Missouri Secretary of State (SOS)** — and returns a plain-language summary and fraud risk analysis for any person, business, or NPI number you query.
 
@@ -36,7 +36,7 @@ Rendered in chat window
 ### Backend endpoint
 
 ```
-POST https://backend-site-lifv.onrender.com/chat
+POST https://randomurl.com
 Content-Type: application/json
 
 { "message": "your query here" }
@@ -47,7 +47,7 @@ Returns:
 { "reply": "AI-generated summary and fraud analysis..." }
 ```
 
-Update the `CHAT_ENDPOINT` constant at the top of `chat.js` if the Render URL ever changes.
+Update the `CHAT_ENDPOINT` constant at the top of `chat.js` if the API/URL is different.
 
 ---
 
@@ -55,23 +55,9 @@ Update the `CHAT_ENDPOINT` constant at the top of `chat.js` if the Render URL ev
 
 No build step required. Just open `index.html` in a browser — or serve it locally to avoid any CORS issues:
 
-```bash
-# Python
-python -m http.server 8000
-
-# Node
-npx serve .
-```
-
-Then visit `http://localhost:8000`.
-
----
-
 ## Deploying to GitHub Pages
 
 Push `index.html` and `chat.js` to your repo. In your GitHub repo settings, go to **Pages** and set the source to the branch and folder containing these files. GitHub Pages will serve `index.html` automatically.
-
-No GitHub Actions workflow or build process is needed — the site is purely static.
 
 ---
 
@@ -81,7 +67,6 @@ No GitHub Actions workflow or build process is needed — the site is purely sta
 |------|-------------|
 | Look up a person | Full name — e.g. `John Smith` |
 | Look up a business | Business name — e.g. `Acme Medical Supply` |
-| Search by identifier | NPI number — e.g. `1234567890` |
 | Target a specific database | Include `OIG` or `SOS` in your query |
 
 **Limitations to be aware of:**
