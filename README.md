@@ -23,16 +23,22 @@ The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user
 
 ```
 User types query
-      ↓
-    chat.js  →  POST { message: "..." }
-                         ↓
-                   Render backend   →   Searches HHS OIG / MO SOS
-                                                   ↓
-                                          AI-generated response   →   { reply: "..." }
-                                                                              ↓
-                                                                          chat.js  
-                                                                              ↓
-                                                                           Rendered in chat window
+       ↓
+    chat.js  →
+         ↓
+        POST { message: "..." }
+                             ↓
+                           Render backend
+                                       ↓
+                                     Searches HHS OIG / MO SOS
+                                                            ↓
+                                                         AI-generated response
+                                                                           ↓
+                                                                         { reply: "..." }
+                                                                                       ↓
+                                                                                      chat.js  
+                                                                                            ↓
+                                                                                          Rendered in chat window
 ```
 
 ### Backend endpoint
@@ -67,13 +73,13 @@ Push `index.html` and `chat.js` to your repo. In your GitHub repo settings, go t
 
 | Goal | What to type |
 |------|-------------|
-| Look up a person | Full name — e.g. `John Smith` |
-| Look up a business | Business name — e.g. `Acme Medical Supply` |
+| Look up a person | Full name - e.g. `John Smith` |
+| Look up a business | Business name - e.g. `Acme Medical Supply` |
 | Target a specific database | Include `OIG` or `SOS` in your query |
 
 **Limitations to be aware of:**
 - Searches one database per question (OIG or SOS). If you don't specify, the AI decides.
-- Results are based on the first match returned — not a full list.
+- Results are based on the first match returned - not a full list.
 - Rate limited to **2 questions per minute**. If you hit an error, wait a moment and try again.
 - Data sources: HHS OIG exclusions database and Missouri Secretary of State business registry only.
 
