@@ -1,6 +1,6 @@
 # DMEPOS Fraud Analysis: AI Assistant
 
-An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthetics, Orthotics, and Supplies) investigations. The assistant searches two official databases — **HHS OIG** and the **Missouri Secretary of State (SOS)** — and returns a plain-language summary and fraud risk analysis for any person, business, or NPI number you query.
+An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthetics, Orthotics, and Supplies) investigations. The assistant searches official databases - currently only **HHS OIG** and the **Missouri Secretary of State (SOS)** - and returns a plain-language summary and fraud risk analysis for any person, business, or NPI number you query.
 
 > The rest of the project's dashboards (Open Payments, Suppliers, Referring Providers, Risk Signals) live in Tableau. This repo is the standalone AI Assistant web app only.
 
