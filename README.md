@@ -93,4 +93,4 @@ Push `index.html` and `chat.js` to your repo. In your GitHub repo settings, go t
 | Hosting | GitHub Pages |
 | Backend / AI | Python on Render |
 | Data sources | HHS OIG, Missouri Secretary of State |
-| Dashboards | Tableau (separate — not in this repo) |
+| Dashboards | Tableau (separate; not in this repo) |
