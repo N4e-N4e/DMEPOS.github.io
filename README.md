@@ -13,13 +13,13 @@ index.html → The full-page dark-themed chatbot UI
 chat.js → Assistant logic - calls the Render backend, renders responses
 ```
 
-That's it. No build step, no frameworks, no dependencies.
+That's literally it. No build step, no frameworks, no dependencies.
 
 ---
 
 ## How it works
 
-The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user types a query, `chat.js` sends a `POST` request to the **Render backend**, which searches HHS OIG or Missouri SOS and returns an AI-generated summary and fraud analysis. The response is rendered back into the chat window.
+The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user types a query, `chat.js` sends a `POST` request to the **Render backend**, which hosts a **Gemini** LLM. Based on the question, Gemini selects the appropriate tool from a custom-built **MCP server**. The tool dynamically navigates and scrapes its respective source for information, which Gemini uses to generate a plain-language summary and fraud analysis. The response is rendered back into the chat window.
 
 ```
 User types query
@@ -59,9 +59,9 @@ Update the `CHAT_ENDPOINT` constant at the top of `chat.js` if the API/URL is di
 
 ---
 
-## Local development
+## Changes to be Done Before Deployment
 
-No build step required. Just open `index.html` in a browser — or serve it locally to avoid any CORS issues:
+Nothing major. Change API/URL; The one specified in this js file has been switched off. 
 
 ## Deploying to GitHub Pages
 
