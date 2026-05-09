@@ -24,7 +24,7 @@ The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user
 ```
 User types query
              ↓
-            chat.js  →
+            chat.js
                   ↓
                  POST { message: "..." }
                                       ↓
