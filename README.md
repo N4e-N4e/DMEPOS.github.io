@@ -23,22 +23,22 @@ The frontend is a plain HTML/CSS/JS page hosted on **GitHub Pages**. When a user
 
 ```
 User types query
-       ↓
-    chat.js  →
-         ↓
-        POST { message: "..." }
-                             ↓
-                           Render backend
-                                       ↓
-                                     Searches HHS OIG / MO SOS
-                                                            ↓
-                                                         AI-generated response
-                                                                           ↓
-                                                                         { reply: "..." }
-                                                                                       ↓
-                                                                                      chat.js  
-                                                                                            ↓
-                                                                                          Rendered in chat window
+             ↓
+            chat.js  →
+                  ↓
+                 POST { message: "..." }
+                                      ↓
+                                     Render backend
+                                                 ↓
+                                                Searches HHS OIG / MO SOS
+                                                                       ↓ 
+                                                                      AI-generated response
+                                                                                         ↓
+                                                                                       { reply: "..." }
+                                                                                                     ↓
+                                                                                                    chat.js  
+                                                                                                          ↓
+                                                                                                         Rendered in chat window
 ```
 
 ### Backend endpoint
