@@ -1,4 +1,4 @@
-# DMEPOS Fraud Analysis: AI Assistant
+# DMEPOS Fraud Analysis: AI Assistant aka DEMIrobato
 
 An AI-powered fraud analysis tool for DMEPOS (Durable Medical Equipment, Prosthetics, Orthotics, and Supplies) investigations. The assistant searches official databases - currently only **HHS OIG** and the **Missouri Secretary of State (SOS)** - and returns a plain-language summary and fraud risk analysis for any person, or business you query.
 
