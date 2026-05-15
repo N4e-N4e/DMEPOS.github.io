@@ -94,3 +94,9 @@ Push `index.html` and `chat.js` to your repo. In your GitHub repo settings, go t
 | Backend / AI | Python on Render |
 | Data sources | HHS OIG, Missouri Secretary of State |
 | Dashboards | Tableau (separate; not in this repo) |
+
+---
+
+## Backend Repo links
+MCP repo: https://github.com/N4e-N4e/MCP_Backend_site/tree/main
+Gemini repo: https://github.com/N4e-N4e/Gemini_Backend_site
